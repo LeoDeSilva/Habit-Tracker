@@ -30,7 +30,9 @@ if (currentDay != localStorage.getItem("date")) {
 	handleNewDay();
 }
 
-let habits =
+let habits;
+
+habits =
 	localStorage.getItem("habits") != null
 		? JSON.parse(localStorage.getItem("habits"))
 		: [];
