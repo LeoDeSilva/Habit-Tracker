@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div id="window" class="center hide">
+        <div id="popup" class="new-habit-window">
+            <div class="new-habit-window-header">
+                <div class="header-container">
+                    <div class="title-input-label">Title</div>
+                    <input id="title-input" class="title-input">
+                </div>
+            </div>
+            <div class="new-habit-body-container">
+                <div class="description-container">
+                    <i class='bx bx-comment-detail bx-flip-horizontal description-icon'></i>
+                    <input id="description-input" placeholder="Description" type="text" class="description">
+                </div>
+                <div class="repeat-container">
+                    <i class='bx bx-refresh repeat-icon'></i>
+                    <span class="repeat">Repeat</span>
+                </div>
+                <div class="form-container">
+                    <input id="frequency-input" maxlength="1" min="1" max="7" class="number-input" placeholder="1"
+                        type="number">
+                    <select class="dropdown" id="weekly-input">
+                        <option value="true">Weekly</option>
+                        <option selected value="false">Daily</option>
+                    </select>
+                </div>
+                <div class="button-container">
+                    <div onclick="hideWindow()" class="cancel btn grow">Cancel</div>
+                    <div onclick="addHabit()" class="add btn grow">Add Habit</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <div class="container">
+        <div class="date-container">
+            <div id="day" class="day">Sunday</div>
+            <h1 class="date-body">
+                <span id="date">Aug 15, 2021</span>
+                <span onclick="showWindow()" id="add-habit" class="new-habit">+</span>
+            </h1>
+        </div>
+        <div class="target-container">
+            <div id="target" class="target">1/2</div>
+            <div onclick="toggleAll()" id="all-btn" class="all-btn grow">All Habits</div>
+        </div>
+        <div class="list">
+            <div id="habit-list" class="habit-list"></div>
+        </div>
+    </div>
+</body>
+<script src="luxon.js"></script>
+<script src="index.js"></script>
+
+</html>
