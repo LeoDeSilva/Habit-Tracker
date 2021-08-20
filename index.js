@@ -26,16 +26,14 @@ const currentDay = Time.getDate();
 
 let testday;
 
-if (currentDay != localStorage.getItem("date")) {
-	handleNewDay();
-}
-
-let habits;
-
-habits =
+let habits =
 	localStorage.getItem("habits") != null
 		? JSON.parse(localStorage.getItem("habits"))
 		: [];
+
+if (currentDay != localStorage.getItem("date")) {
+	handleNewDay();
+}
 
 function render() {
 	renderHabits();
