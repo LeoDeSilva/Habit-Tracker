@@ -24,6 +24,8 @@ dayElement.innerHTML = day;
 
 const currentDay = Time.getDate();
 
+let testday;
+
 let habits =
 	localStorage.getItem("habits") != null
 		? JSON.parse(localStorage.getItem("habits"))
@@ -57,6 +59,13 @@ function handleNewDay() {
 		);
 	}
 
+	if (testday < 7) {
+		testday++;
+	} else {
+		testday = 1;
+	}
+
+	console.log("DAY:", testday);
 	render();
 	saveHabits();
 }
