@@ -24,8 +24,6 @@ dayElement.innerHTML = day;
 
 const currentDay = Time.getDate();
 
-let testday;
-
 let habits =
 	localStorage.getItem("habits") != null
 		? JSON.parse(localStorage.getItem("habits"))
@@ -59,13 +57,6 @@ function handleNewDay() {
 		);
 	}
 
-	if (testday < 7) {
-		testday++;
-	} else {
-		testday = 1;
-	}
-
-	console.log("DAY:", testday);
 	render();
 	saveHabits();
 }
@@ -108,7 +99,7 @@ function renderHabits() {
 			let habit = weeklyHabits[i];
 			let weekday = Time.getDay();
 
-			if (testday == habit.frequency || weekday == habit.frequency) {
+			if (weekday == habit.frequency) {
 				habitList.innerHTML += `<div id="${habit.id}" class="habit ${
 					habit.completed ? "checked" : ""
 				}"><div ondblclick="removeHabit(this)" onclick="toggleHabit(this)" class="checkbox grow"></div><div class="title">${
